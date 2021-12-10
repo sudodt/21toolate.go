@@ -15,9 +15,8 @@ jobs:
     - uses: actions/setup-node@v2.1.5
       with:
         node-version: 16
-    - run: npm install -g yarn
-        uses: jaid/action-npm-install@master
-    - run: yarn install --frozen-lockfile
+    - name: npm install
+      uses: jaid/action-npm-install@v1.2.1
     - run: yarn build
 
     - name: Copy repository contents via scp
